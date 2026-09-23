@@ -4,8 +4,7 @@ MCU + FPGA edge kit for the [Vicharak Shrike](https://github.com/vicharak-in/shr
 
 Timing cores. Not a seeker.
 
-The public repo was created with a description and nothing else. This tree
-is the actual kit: a documented 6-bit MCU-FPGA register bus on the pins
+This tree is the actual kit: a documented 6-bit MCU-FPGA register bus on the pins
 Vicharak already wired, plus PWM, UART, and a pulse sampler that fit the
 Renesas SLG47910 (1120 five-input LUTs, 50 MHz internal OSC).
 
