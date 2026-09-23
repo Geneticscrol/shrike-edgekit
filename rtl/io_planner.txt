@@ -1,0 +1,24 @@
+Go Configure / ForgeFPGA IO planner map for rtl/top.v
+Device: Renesas SLG47910 (Shrike / Shrike-lite / Shrike-fi)
+
+Filter CLK / OSC_ctrl first:
+
+  clk      -> OSC_CLK
+  clk_en   -> OSC_EN
+
+Then GPIO (names are board FPGA GPIO numbers, not package balls):
+
+  sck      in   GPIO3
+  cs_n     in   GPIO4
+  mosi     in   GPIO5
+  miso     out  GPIO6     + miso_oe -> GPIO6_OE
+  irq      out  GPIO18    + irq_oe  -> GPIO18_OE
+  trig     in   GPIO17
+  pwm_out  out  GPIO14    + pwm_oe  -> GPIO14_OE
+  uart_tx  out  GPIO8     + uart_tx_oe -> GPIO8_OE
+  uart_rx  in   GPIO9
+  smp_in   in   GPIO10
+  led      out  GPIO16    + led_oe  -> GPIO16_OE
+
+Every SLG47910 output pad is dead until its OE is tied high. That is the
+"dim LED that never changes" failure mode.
